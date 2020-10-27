@@ -20,11 +20,11 @@
                 </div>
             </div>
 
-            <div class="cover-container" style="margin-top:250px">
+            <div class="cover-container" style="margin-top:250px    ">
             <div class="inner cover">
                 <h1 class="cover-heading">Random Picker</h1>
                 <p class="lead">Random picker for sir enmar</p>
-                <p class="lead"><a href="http://forbetterweb.com/htmlandbootstrap/classic-cover-video-background-one-page-websites-html-bootstrap/" class="btn btn-lg btn-default">Go</a></p>
+                <p class="lead"><a @click="pick" class="btn btn-lg btn-default">Go</a></p>
             </div>
 
             <div class="mastfoot">
@@ -44,6 +44,11 @@
 export default {
     mounted(){
         
+    },
+    methods:{
+        pick(){
+            alert('hey')
+        }
     }
 }
 </script>

@@ -1984,7 +1984,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {}
+  mounted: function mounted() {},
+  methods: {
+    pick: function pick() {
+      alert('hey');
+    }
+  }
 });
 
 /***/ }),
@@ -41025,98 +41030,99 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "site-wrapper video-background" }, [
+    _c("div", { staticClass: "site-wrapper-inner" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "cover-container",
+          staticStyle: { "margin-top": "250px" }
+        },
+        [
+          _c("div", { staticClass: "inner cover" }, [
+            _c("h1", { staticClass: "cover-heading" }, [
+              _vm._v("Random Picker")
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "lead" }, [
+              _vm._v("Random picker for sir enmar")
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "lead" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-lg btn-default",
+                  on: { click: _vm.pick }
+                },
+                [_vm._v("Go")]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._m(1)
+        ]
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "site-wrapper video-background" }, [
-      _c("div", { staticClass: "site-wrapper-inner" }, [
-        _c("div", { staticClass: "masthead clearfix" }, [
-          _c("div", { staticClass: "inner" }, [
-            _c("h3", { staticClass: "masthead-brand" }, [
-              _vm._v("LIGHT MICROFINANCE INC")
+    return _c("div", { staticClass: "masthead clearfix" }, [
+      _c("div", { staticClass: "inner" }, [
+        _c("h3", { staticClass: "masthead-brand" }, [
+          _vm._v("LIGHT MICROFINANCE INC")
+        ]),
+        _vm._v(" "),
+        _c("nav", [
+          _c("ul", { staticClass: "nav masthead-nav" }, [
+            _c("li", [
+              _c("a", { attrs: { href: "https://twitter.com/jenyelkind" } }, [
+                _c("i", { staticClass: "fa fa-twitter fa-fw" })
+              ])
             ]),
             _vm._v(" "),
-            _c("nav", [
-              _c("ul", { staticClass: "nav masthead-nav" }, [
-                _c("li", [
-                  _c(
-                    "a",
-                    { attrs: { href: "https://twitter.com/jenyelkind" } },
-                    [_c("i", { staticClass: "fa fa-twitter fa-fw" })]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c(
-                    "a",
-                    { attrs: { href: "https://www.facebook.com/jenyelkind" } },
-                    [_c("i", { staticClass: "fa fa-facebook fa-fw" })]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c(
-                    "a",
-                    { attrs: { href: "https://plus.google.com/+JenyElkind/" } },
-                    [_c("i", { staticClass: "fa fa-google-plus fa-fw" })]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "mailto:elkind@elkind.net" } }, [
-                    _c("i", { staticClass: "fa fa-envelope fa-fw" })
-                  ])
-                ])
+            _c("li", [
+              _c(
+                "a",
+                { attrs: { href: "https://www.facebook.com/jenyelkind" } },
+                [_c("i", { staticClass: "fa fa-facebook fa-fw" })]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c(
+                "a",
+                { attrs: { href: "https://plus.google.com/+JenyElkind/" } },
+                [_c("i", { staticClass: "fa fa-google-plus fa-fw" })]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "mailto:elkind@elkind.net" } }, [
+                _c("i", { staticClass: "fa fa-envelope fa-fw" })
               ])
             ])
           ])
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "cover-container",
-            staticStyle: { "margin-top": "250px" }
-          },
-          [
-            _c("div", { staticClass: "inner cover" }, [
-              _c("h1", { staticClass: "cover-heading" }, [
-                _vm._v("Random Picker")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "lead" }, [
-                _vm._v("Random picker for sir enmar")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "lead" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "btn btn-lg btn-default",
-                    attrs: {
-                      href:
-                        "http://forbetterweb.com/htmlandbootstrap/classic-cover-video-background-one-page-websites-html-bootstrap/"
-                    }
-                  },
-                  [_vm._v("Go")]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mastfoot" }, [
-              _c("div", { staticClass: "inner" }, [
-                _c("p", [
-                  _vm._v("Copyright © "),
-                  _c("a", { attrs: { href: "/" } }, [_vm._v("primoashbee")])
-                ])
-              ])
-            ])
-          ]
-        )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mastfoot" }, [
+      _c("div", { staticClass: "inner" }, [
+        _c("p", [
+          _vm._v("Copyright © "),
+          _c("a", { attrs: { href: "/" } }, [_vm._v("primoashbee")])
+        ])
       ])
     ])
   }
