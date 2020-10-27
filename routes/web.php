@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Person;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PersonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('picker');
 });
+Route::get('/pick',function(){
+    
+    return response()->json(['winner'=>Person::inRandomOrder()->limit(1)->first()],200);
+});
+Route::get('/upload',[PersonController::class,'showForm'])->name('show.form');
+Route::post('/upload',[PersonController::class,'import']);
