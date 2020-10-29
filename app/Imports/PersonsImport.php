@@ -17,7 +17,8 @@ class PersonsImport implements ToModel, withHeadingRow
     {
         return new Person([
             'name'=>$row['name'],
-            'phone'=>$row['phone']
+            'phone'=>$row['phone'],
+            'branch'=>$row['branch']
         ]);
     }
 }

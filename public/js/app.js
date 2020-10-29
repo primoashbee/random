@@ -2013,24 +2013,83 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {},
   data: function data() {
     return {
-      hidden: false,
-      winner: null
+      hidden: true,
+      winner: null,
+      disable: false
     };
   },
   methods: {
     pick: function pick() {
       var _this = this;
 
-      this.hidden = true;
+      this.disable = true;
+      this.hidden = false;
       axios.get('/pick').then(function (res) {
-        _this.winner = res.data.winner; // setTimeout(()=>{
-
-        _this.hidden = false;
-        Swal.fire('We have a winner!', _this.winner.name + ' - ' + _this.winner.phone, 'success'); // },3000)
+        _this.winner = res.data.winner;
+        _this.htmlContent = '<video playsinline autoplay loop id="bgvid"><source src="/img/video.mp4" type=video/mp4></video><div class="viewport-header"><h4 class="white">We Have a Winner From ' + _this.winner.branch + ' Branch<br><br>' + _this.winner.name + ' - ' + _this.winner.phone + '</h4></div>';
+        setTimeout(function () {
+          _this.hidden = true;
+          Swal.fire(_this.htmlContent);
+          _this.disable = false;
+        }, 3000);
       });
     }
   }
@@ -6475,10 +6534,10 @@ __webpack_require__.r(__webpack_exports__);
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
-
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Staatliches&display=swap);", ""]);
 
 // module
-exports.push([module.i, "\n.lds-hourglass {\n  display: inline-block;\n  position: relative;\n  width: 80px;\n  height: 80px;\n}\n.lds-hourglass:after {\n  content: \" \";\n  display: block;\n  border-radius: 50%;\n  width: 0;\n  height: 0;\n  margin: 8px;\n  box-sizing: border-box;\n  border: 32px solid #fff;\n  border-color: #fff transparent #fff transparent;\n  -webkit-animation: lds-hourglass 1.2s infinite;\n          animation: lds-hourglass 1.2s infinite;\n}\n@-webkit-keyframes lds-hourglass {\n0% {\n    transform: rotate(0);\n    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n50% {\n    transform: rotate(900deg);\n    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n100% {\n    transform: rotate(1800deg);\n}\n}\n@keyframes lds-hourglass {\n0% {\n    transform: rotate(0);\n    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n50% {\n    transform: rotate(900deg);\n    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n100% {\n    transform: rotate(1800deg);\n}\n}\n", ""]);
+exports.push([module.i, "\n.lds-hourglass {\n position: absolute;\n    width: 100%;\n    height: 400px;\n    /* margin: 0 auto; */\n    margin: auto;\n    bottom: 0;\n    left: 41%;\n    right: 0;\n    top: 47%;\n}\n.btn-default[disabled]{\n  background-color: transparent;\n}\n.logo-container{\n      position: absolute;\n    top: 0;\n    width: 450px;\n    right: 0;\n    left: 0;\n    margin: 0 auto;\n}\n.logo-container img{\n  width: 100%;\n}\n.lds-hourglass:after {\n  content: \" \";\n  display: block;\n  border-radius: 50%;\n  width: 0;\n  height: 0;\n  margin: 8px;\n  box-sizing: border-box;\n  border: 160px solid #fff;\n  border-color: #fff transparent #fff transparent;\n  -webkit-animation: lds-hourglass 1.2s infinite;\n          animation: lds-hourglass 1.2s infinite;\n}\n.swal2-popup{\n  font-size: 2rem!important;\n  width: 45em;\n}\n.site-wrapper-inner.picked{\n  opacity: 1;\n}\n.site-wrapper-inner{\n  opacity: 0.2;\n}\n.swal2-title{\n  font-weight: 200!important;\n}\n.swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen)>.swal2-modal{\n    width: 100%!important;\n    background: transparent;\n    margin: 0;\n}\n.swal2-confirm.swal2-styled{\n  background-color: #ff8100!important;\n}\nvideo{\n  -o-object-fit: cover;\n     object-fit: cover;\n  width: 100vw;\n  height: 100vh;\n  position: fixed;\n  top: 0;\n  left: 0;\n}\nh4.white{\n  color: #fdce75;\n  font-size: 6rem;\n  white-space: nowrap;\n  font-family: 'Staatliches', cursive;\n}\n.viewport-header {\n  position: relative;\n  height: 25vh;\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.swal2-popup{\n  width: 100vh!important;\n  height: 100vh!important;\n}\n@-webkit-keyframes lds-hourglass {\n0% {\n    transform: rotate(0);\n    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n50% {\n    transform: rotate(900deg);\n    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n100% {\n    transform: rotate(1800deg);\n}\n}\n@keyframes lds-hourglass {\n0% {\n    transform: rotate(0);\n    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n50% {\n    transform: rotate(900deg);\n    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n100% {\n    transform: rotate(1800deg);\n}\n}\n", ""]);
 
 // exports
 
@@ -41722,41 +41781,46 @@ var render = function() {
   return _c("div", { staticClass: "site-wrapper video-background" }, [
     _c("div", { staticClass: "lds-hourglass", attrs: { hidden: _vm.hidden } }),
     _vm._v(" "),
-    _c("div", { staticClass: "site-wrapper-inner" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "cover-container",
-          staticStyle: { "margin-top": "250px" }
-        },
-        [
-          _c("div", { staticClass: "inner cover" }, [
-            _c("h1", { staticClass: "cover-heading" }, [
-              _vm._v("Random Picker")
+    _c(
+      "div",
+      { staticClass: "site-wrapper-inner", class: { picked: _vm.hidden } },
+      [
+        _c(
+          "div",
+          {
+            staticClass: "cover-container",
+            staticStyle: { "margin-top": "250px" }
+          },
+          [
+            _c("div", { staticClass: "inner cover" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("h1", { staticClass: "cover-heading" }, [
+                _vm._v("Random Picker")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "lead" }, [
+                _vm._v("For Partner Client Raffle")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "lead" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "btn btn-lg btn-default",
+                    attrs: { disabled: _vm.disable },
+                    on: { click: _vm.pick }
+                  },
+                  [_vm._v("Go")]
+                )
+              ])
             ]),
             _vm._v(" "),
-            _c("p", { staticClass: "lead" }, [
-              _vm._v("Random picker for sir enmar")
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "lead" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "btn btn-lg btn-default",
-                  on: { click: _vm.pick }
-                },
-                [_vm._v("Go")]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _vm._m(1)
-        ]
-      )
-    ])
+            _vm._m(1)
+          ]
+        )
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -41764,44 +41828,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "masthead clearfix" }, [
-      _c("div", { staticClass: "inner" }, [
-        _c("h3", { staticClass: "masthead-brand" }, [
-          _vm._v("LIGHT MICROFINANCE INC")
-        ]),
-        _vm._v(" "),
-        _c("nav", [
-          _c("ul", { staticClass: "nav masthead-nav" }, [
-            _c("li", [
-              _c("a", { attrs: { href: "https://twitter.com/jenyelkind" } }, [
-                _c("i", { staticClass: "fa fa-twitter fa-fw" })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c(
-                "a",
-                { attrs: { href: "https://www.facebook.com/jenyelkind" } },
-                [_c("i", { staticClass: "fa fa-facebook fa-fw" })]
-              )
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c(
-                "a",
-                { attrs: { href: "https://plus.google.com/+JenyElkind/" } },
-                [_c("i", { staticClass: "fa fa-google-plus fa-fw" })]
-              )
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "mailto:elkind@elkind.net" } }, [
-                _c("i", { staticClass: "fa fa-envelope fa-fw" })
-              ])
-            ])
-          ])
-        ])
-      ])
+    return _c("div", { staticClass: "logo-container" }, [
+      _c("img", { attrs: { src: "/img/LIGHT-logo.png", alt: "" } })
     ])
   },
   function() {
@@ -54245,8 +54273,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/ashbeemorgado/devs/picker/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/ashbeemorgado/devs/picker/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/nelsontan/Projects/random/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/nelsontan/Projects/random/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
