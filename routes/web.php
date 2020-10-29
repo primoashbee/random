@@ -4,6 +4,7 @@ use App\Models\Person;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PersonController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,8 +20,14 @@ Route::get('/', function () {
     return view('picker');
 });
 Route::get('/pick',function(){
-    
-    return response()->json(['winner'=>Person::inRandomOrder()->limit(1)->first()],200);
+   	$person =Person::inRandomOrder()->limit(1)->first();
+
+   	
+   	\Log::info($person);
+
+    return response()->json(['winner'=>$person],200);
+
+
 });
 Route::get('/upload',[PersonController::class,'showForm'])->name('show.form');
 Route::post('/upload',[PersonController::class,'import']);

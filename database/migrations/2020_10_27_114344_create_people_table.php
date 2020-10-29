@@ -17,6 +17,7 @@ class CreatePeopleTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('phone');
+            $table->string('branch');
             $table->timestamps();
         });
     }
